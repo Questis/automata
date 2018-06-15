@@ -29,7 +29,7 @@ control of Automata
   created on Automata's first run.
   - `log_format`: The format to use when logging.  This script uses Python's
   `logging` module, and this format should mirror what that module would use.
-  - `sudoers_file`: This is the name of the `sudoers` configuration file to 
+- `sudoers_file`: This is the name of the `sudoers` configuration file to 
   use inside of `/etc/sudoers.d`.
   
 ```yaml

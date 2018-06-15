@@ -1,0 +1,11 @@
+---
+group: automated
+server: 
+  api_address: "https://your.gitlab.server/api/v4"
+  api_token: "xxxxxxxxxxxxxxxxxxxx"
+  group: admins
+logging:
+  log_level: debug
+  log_path: /var/log/automata.log
+  log_format: '%(asctime)s [%(levelname)s] %(message)s'
+sudoers_file: automated-users

@@ -1,0 +1,11 @@
+---
+group: {{ automata_default_user_group }}
+server: 
+  api_address: "{{ automata_gitlab_api_address }}" 
+  api_token: "{{ automata_gitlab_api_token }}" 
+  group: "{{ automata_group }}"
+logging:
+  log_level: "{{ automata_log_level }}" 
+  log_path: "{{ automata_log_path }}"
+  log_format: "{{ automata_log_format }}"
+sudoers_file: "{{ automata_sudoers_file }}"

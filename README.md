@@ -29,6 +29,8 @@ control of Automata
   created on Automata's first run.
   - `log_format`: The format to use when logging.  This script uses Python's
   `logging` module, and this format should mirror what that module would use.
+  - `sudoers_file`: This is the name of the `sudoers` configuration file to 
+  use inside of `/etc/sudoers.d`.
   
 ```yaml
 group: automated
@@ -65,13 +67,18 @@ $ pip install -r requirements.txt
 ```
 
 Once everything is copied, edit the `ansible.yaml.example` file with your configuration information.  After this, the
-only thing that really needs to be done is to setup a _cron_ job to kick off the script every 10 minutes or so.
+only thing that really needs to be done is to setup a _cron_ job under `root` to kick off the script every 10 minutes or so.
 
 ```console
 */10 * * * * /opt/automata/venv/bin/python /opt/automata/automata.py
 ```
 
 Now, all that's needed is to run the script on the server to get those sweet, sweet user accounts created.
+
+## Things of Note
+- Users with periods in their names (e.g. `john.doe`) will have the `.` replaced with an underscore (result: `john_doe`).
+- Since none of the users have actual passwords, the `sudoers` file will contain a `NOPASSWD` entry for each.
+- Each user gets a line in the `sudoers` configuration file specified above.
 
 ## Exit Codes
 

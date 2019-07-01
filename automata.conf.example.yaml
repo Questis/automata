@@ -1,0 +1,17 @@
+---
+gitlab:
+  server:
+    api_address: "https://gitlab.myquestis.com/api/v4"
+    api_token: "abcdefg1234567"
+    sudoers_file: "/etc/sudoers.d/automata"
+    home_dir_path: '/home'
+  groups:
+    open-source:
+      linux_group: open_source
+      sudoers_line: 'ALL=(ALL) NOPASSWD: ALL'
+      other_groups:
+        - docker 
+logging:
+  log_level: debug
+  log_path: /var/log/automata.log
+  log_format: '%(asctime)s [%(levelname)s] %(message)s'
